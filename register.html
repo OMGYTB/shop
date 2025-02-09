@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="assets/css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-store"></i>
+                <span>MonShop</span>
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="#accueil">
+                        <i class="fas fa-home"></i>
+                        <span>Accueil</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#produits">
+                        <i class="fas fa-tags"></i>
+                        <span>Produits</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="login.html">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Se connecter</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="register.php">
+                        <i class="fas fa-user-plus"></i>
+                        <span>S'inscrire</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="login-container">
+        <div class="form-header">
+            <h2>Inscription</h2>
+            <form action="php/process_register.php" method="POST">
+                <div class="form-group">
+                    <input type="text" id="username" name="username" required placeholder="Nom d'utilisateur">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required placeholder="Adresse e-mail">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" name="password" required placeholder="Mot de passe">
+                    <i class="fas fa-lock"></i>
+                    <i class="fas fa-eye toggle-password" onclick="togglePassword('password')"></i>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="confirm_password" name="confirm_password" required placeholder="Confirmer le mot de passe">
+                    <i class="fas fa-lock"></i>
+                    <i class="fas fa-eye toggle-password" onclick="togglePassword('confirm_password')"></i>
+                </div>
+                <button type="submit">
+                    <i class="fas fa-user-plus"></i> S'inscrire
+                </button>
+            </form>
+            <div class="links">
+                <p>Déjà inscrit ? <a href="login.html">Se connecter</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/auth-register.js"></script>
+</body>
+</html>

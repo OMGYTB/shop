@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonShop - Boutique en ligne</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Header avec navigation -->
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-store"></i>
+                <span>MonShop</span>
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="#accueil">
+                        <i class="fas fa-home"></i>
+                        <span>Accueil</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#produits">
+                        <i class="fas fa-tags"></i>
+                        <span>Produits</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="login.html">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Se connecter</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="register.html">
+                        <i class="fas fa-user-plus"></i>
+                        <span>S'inscrire</span>
+                    </a>
+                </li>
+                <li class="cart-icon">
+                    <a href="#" id="cart-toggle">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <div id="mini-cart" class="mini-cart">
+                        <div class="cart-header">
+                            <i class="fas fa-shopping-basket"></i>
+                            <span>Mon Panier</span>
+                        </div>
+                        <div class="cart-items">
+                            <p>Voici les articles que vous avez ajoutés à votre panier.</p>
+                        </div>
+                        <div class="cart-total">
+                            <p>Total TTC : <span id="cart-total">0.00</span>€</p>
+                        </div>
+                        <a href="panier.html" class="view-cart-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                            Voir le panier
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <a href="fav.html">
+                        <i class="fas fa-heart"></i>
+                        <span class="favorites-count">0</span>
+                    </a>
+                </li>                
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Section Héro -->
+    <section class="hero">
+        <h1>Bienvenue sur MonShop</h1>
+        <p>Découvrez nos produits exceptionnels</p>
+    </section>
+
+    <!-- Section Produits -->
+    <section id="produits" class="products-section">
+        <h2 class="section-title">Nos Produits Tendance</h2>
+        <div class="products-container">
+            <!-- Produit 1 -->
+            <div class="product-card" data-product-id="1">
+                <div class="product-badge">Nouveau</div>
+                <div class="product-image-wrapper">
+                    <img src="assets/img/gaara.webp" alt="Produit 1" class="product-image">
+                        <div class="product-overlay">
+                            <div class="product-actions">
+                                <button class="action-btn" class="wishlist-btn" onclick="toggleWishlist(this)">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <button class="action-btn cart-btn">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                                <button class="action-btn view-btn" onclick="openProductModal(this)">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Catégorie</div>
+                        <h3 class="product-title">T-Shirt Gaara</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5)</span>
+                        </div>
+                        <div class="product-details" style="display: none;">
+                            <div class="product-description">Description détaillée du T-shirt Gaara...</div>
+                            <div class="product-specifications">
+                                <ul>
+                                    <li data-spec="material">100% Coton</li>
+                                    <li data-spec="size">S, M, L, XL</li>
+                                    <li data-spec="weight">200g</li>
+                                    <li data-spec="reference">MSP001</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">20.00€</span>
+                            <span class="original-price">30.00€</span>
+                        </div>
+                        <button onclick="addToCart(this)" class="add-to-cart-btn">Ajouter au panier</button>
+                    </div>
+                </div>
+
+            <!-- Produit 2 -->
+            <div class="product-card" data-product-id="2">
+                <div class="product-badge">Nouveau</div>
+                <div class="product-image-wrapper">
+                    <img src="assets/img/kakashi.webp" alt="Produit 2" class="product-image">
+                    <div class="product-overlay">
+                        <div class="product-actions">
+                            <button class="action-btn" class="wishlist-btn" onclick="toggleWishlist(this)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                            <button class="action-btn cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                            <button class="action-btn view-btn" onclick="openProductModal(this)">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Catégorie</div>
+                    <h3 class="product-title">Pull kakashi</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(4.5)</span>
+                    </div>
+                    <div class="product-details" style="display: none;">
+                        <div class="product-description">Description détaillée du Pull Kakashi...</div>
+                        <div class="product-specifications">
+                            <ul>
+                                <li data-spec="material">100% Coton</li>
+                                <li data-spec="size">S, M, L, XL</li>
+                                <li data-spec="weight">200g</li>
+                                <li data-spec="reference">MSP002</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">30.00€</span>
+                        <span class="original-price">38.00€</span>
+                    </div>
+                    <button onclick="addToCart(this)" class="add-to-cart-btn">Ajouter au panier</button>
+                </div>
+            </div>
+
+
+            <!-- Produit 3 -->
+            <div class="product-card" data-product-id="3">
+                <div class="product-badge">Nouveau</div>
+                <div class="product-image-wrapper">
+                    <img src="assets/img/itachi eyes.webp" alt="Produit 3" class="product-image">
+                    <div class="product-overlay">
+                        <div class="product-actions">
+                            <button class="action-btn" class="wishlist-btn" onclick="toggleWishlist(this)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                            <button class="action-btn cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                            <button class="action-btn view-btn" onclick="openProductModal(this)">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Catégorie</div>
+                    <h3 class="product-title">T-Shirt Eyes of Itachi</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(4.5)</span>
+                    </div>
+                    <div class="product-details" style="display: none;">
+                        <div class="product-description">Description détaillée du T-shirt T-Shirt Eyes of Itachi...</div>
+                        <div class="product-specifications">
+                            <ul>
+                                <li data-spec="material">100% Coton</li>
+                                <li data-spec="size">S, M, L, XL</li>
+                                <li data-spec="weight">200g</li>
+                                <li data-spec="reference">MSP003</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">21.00€</span>
+                        <span class="original-price">32.00€</span>
+                    </div>
+                    <button onclick="addToCart(this)" class="add-to-cart-btn">Ajouter au panier</button>
+                </div>
+            </div>
+
+            <!-- Produit 4 -->
+            <div class="product-card" data-product-id="4">
+                <div class="product-badge">Nouveau</div>
+                <div class="product-image-wrapper">
+                    <img src="assets/img/luffy.jpeg" alt="Produit 4" class="product-image">
+                    <div class="product-overlay">
+                        <div class="product-actions">
+                            <button class="action-btn" class="wishlist-btn" onclick="toggleWishlist(this)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                            <button class="action-btn cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                            <button class="action-btn view-btn" onclick="openProductModal(this)">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Catégorie</div>
+                    <h3 class="product-title">T-Shirt Luffy</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(4.5)</span>
+                    </div>
+                    <div class="product-details" style="display: none;">
+                        <div class="product-description">Description détaillée du T-shirt luffy...</div>
+                        <div class="product-specifications">
+                            <ul>
+                                <li data-spec="material">100% Coton</li>
+                                <li data-spec="size">S, M, L, XL</li>
+                                <li data-spec="weight">200g</li>
+                                <li data-spec="reference">MSP004</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">24.00€</span>
+                        <span class="original-price">30.00€</span>
+                    </div>
+                    <button onclick="addToCart(this)" class="add-to-cart-btn">Ajouter au panier</button>
+                </div>
+            </div>
+
+            <!-- Produit 5 -->
+            <div class="product-card" data-product-id="5">
+                <div class="product-badge">Nouveau</div>
+                <div class="product-image-wrapper">
+                    <img src="assets/img/zoro.jpeg" alt="Produit 5" class="product-image">
+                    <div class="product-overlay">
+                        <div class="product-actions">
+                            <button class="action-btn" class="wishlist-btn" onclick="toggleWishlist(this)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                            <button class="action-btn cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                            <button class="action-btn view-btn" onclick="openProductModal(this)">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Catégorie</div>
+                    <h3 class="product-title">T-Shirt Zoro</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(5)</span>
+                    </div>
+                    <div class="product-details" style="display: none;">
+                        <div class="product-description">Description détaillée du T-shirt zoro...</div>
+                        <div class="product-specifications">
+                            <ul>
+                                <li data-spec="material">100% Coton</li>
+                                <li data-spec="size">S, M, L, XL</li>
+                                <li data-spec="weight">200g</li>
+                                <li data-spec="reference">MSP005</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">24.00</span>
+                        <span class="original-price">30.00€</span>
+                    </div>
+                    <button onclick="addToCart(this)" class="add-to-cart-btn">Ajouter au panier</button>
+                </div>
+            </div>
+
+            <!-- Produit 6 -->
+            <div class="product-card" data-product-id="6">
+                <div class="product-badge">Nouveau</div>
+                <div class="product-image-wrapper">
+                    <img src="assets/img/aï.webp" alt="Produit 6" class="product-image">
+                        <div class="product-overlay">
+                            <div class="product-actions">
+                                <button class="action-btn" class="wishlist-btn" onclick="toggleWishlist(this)">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <button class="action-btn cart-btn">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                                <button class="action-btn view-btn" onclick="openProductModal(this)">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Catégorie</div>
+                        <h3 class="product-title">T-Shirt Aï</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <span>(3.5)</span>
+                        </div>
+                        <div class="product-details" style="display: none;">
+                            <div class="product-description">Description détaillée du T-shirt Aï...</div>
+                            <div class="product-specifications">
+                                <ul>
+                                    <li data-spec="material">100% Coton</li>
+                                    <li data-spec="size">S, M, L, XL</li>
+                                    <li data-spec="weight">200g</li>
+                                    <li data-spec="reference">MSP001</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">20.00€</span>
+                            <span class="original-price">30.00€</span>
+                        </div>
+                        <button onclick="addToCart(this)" class="add-to-cart-btn">Ajouter au panier</button>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+
+        <div class="footer-content">
+            <!-- Section À propos -->
+            <div class="footer-section">
+                <h3 class="footer-title">À propos de MonShop</h3>
+                <p class="footer-description">
+                    Découvrez notre sélection unique de produits de qualité. 
+                    Nous nous engageons à vous offrir la meilleure expérience shopping.
+                </p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+    
+            <!-- Section Liens Rapides -->
+            <div class="footer-section">
+                <h3 class="footer-title">Liens Rapides</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Accueil</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Produits</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> À propos</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+                </ul>
+            </div>
+    
+            <!-- Section Contact -->
+            <div class="footer-section">
+                <h3 class="footer-title">Contactez-nous</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>123 Rue du Commerce, 75001 Paris</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+33 1 23 45 67 89</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>contact@monshop.com</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Section Newsletter -->
+            <div class="footer-section">
+                <h3 class="footer-title">Newsletter</h3>
+                <p class="footer-description">
+                    Inscrivez-vous pour recevoir nos dernières offres
+                </p>
+                <form class="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" placeholder="Votre email" required>
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p class="copyright">
+                    &copy; 2024 MonShop. Tous droits réservés
+                </p>
+                <div class="footer-bottom-links">
+                    <a href="#">Politique de confidentialité</a>
+                    <a href="#">Conditions d'utilisation</a>
+                    <a href="#">Mentions légales</a>
+                </div>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-cc-apple-pay"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal du produit -->
+<div id="productModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-product-details">
+            <div class="modal-product-image">
+                <img src="" alt="Product Image">
+            </div>
+            <div class="modal-product-info">
+                <h2 class="modal-product-title"></h2>
+                <div class="modal-product-category"></div>
+                <div class="modal-product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span class="rating-value"></span>
+                </div>
+                <div class="modal-product-price">
+                    <span class="current-price"></span>
+                    <span class="original-price"></span>
+                </div>
+                <div class="modal-product-description">
+                    <h3>Description</h3>
+                    <p>Description détaillée du produit...</p>
+                </div>
+                <div class="modal-product-details-list">
+                    <h3>Caractéristiques</h3>
+                    <ul>
+                        <li>Matériau: Premium</li>
+                        <li>Dimensions: 30x40cm</li>
+                        <li>Poids: 250g</li>
+                        <li>Référence: REF123</li>
+                    </ul>
+                </div>
+                <div class="modal-product-actions">
+                    <div class="quantity-selector">
+                        <button class="quantity-btn minus">-</button>
+                        <input type="number" value="1" min="1" class="quantity-input">
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <button class="add-to-cart-btn">Ajouter au panier</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/wishlist-manager.js"></script>
+    <script>
+        // Fonction pour gérer l'ajout au panier depuis les boutons de la page
+        function addToCart(button) {
+            const productCard = button.closest('.product-card') || button.closest('.modal-content');
+            const product = {
+                id: productCard.dataset.productId,
+                title: productCard.querySelector('.product-title').textContent,
+                price: parseFloat(productCard.querySelector('.current-price').textContent),
+                image: productCard.querySelector('.product-image').src,
+                quantity: 1
+            };
+            
+            cart.addItem(product);
+        }
+    </script>
+    </body>
+</html>

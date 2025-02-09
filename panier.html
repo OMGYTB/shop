@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Panier - MonShop</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Header avec navigation -->
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-store"></i>
+                <span>MonShop</span>
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="index.html">
+                        <i class="fas fa-home"></i>
+                        <span>Accueil</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#produits">
+                        <i class="fas fa-tags"></i>
+                        <span>Produits</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="login.html">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Se connecter</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="register.html">
+                        <i class="fas fa-user-plus"></i>
+                        <span>S'inscrire</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="cart-page">
+        <h1>Mon Panier</h1>
+        <div class="cart-container">
+            <!-- Important: cette div doit être présente -->
+            <div class="cart-items-full"></div>
+
+            <div class="cart-summary">
+                <h2>Résumé de la commande</h2>
+                <div class="summary-details">
+                    <div class="summary-line">
+                        <span>Sous-total:</span>
+                        <span id="subtotal">0.00</span>€
+                    </div>
+                    <div class="summary-line">
+                        <span>Livraison (20%):</span>
+                        <span id="shipping">0.00</span>€
+                    </div>
+                    <div class="summary-line total">
+                        <span>Total:</span>
+                        <span id="total">0.00</span>€
+                    </div>
+                </div>
+                <button class="checkout-btn">
+                    <i class="fas fa-lock"></i>
+                    Procéder au paiement
+                </button>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="assets/js/cart.js"></script>
+
+</body>
+</html>

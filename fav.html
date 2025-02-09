@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Favoris - MonShop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/wishlist.css">
+</head>
+<body>
+    <!-- Header avec navigation -->
+    <header>
+        <header>
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-store"></i>
+                    <span>MonShop</span>
+                </div>
+                <ul class="nav-links">
+                    <li>
+                        <a href="index.html">
+                            <i class="fas fa-home"></i>
+                            <span>Accueil</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#produits">
+                            <i class="fas fa-tags"></i>
+                            <span>Produits</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="login.html">
+                            <i class="fas fa-sign-in-alt"></i>
+                            <span>Se connecter</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="register.html">
+                            <i class="fas fa-user-plus"></i>
+                            <span>S'inscrire</span>
+                        </a>
+                    </li>
+                    <li class="cart-icon">
+                        <a href="#" id="cart-toggle">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                        <div id="mini-cart" class="mini-cart">
+                            <div class="cart-header">
+                                <i class="fas fa-shopping-basket"></i>
+                                <span>Mon Panier</span>
+                            </div>
+                            <div class="cart-items">
+                                <p>Voici les articles que vous avez ajoutés à votre panier.</p>
+                            </div>
+                            <div class="cart-total">
+                                <p>Total TTC : <span id="cart-total">0.00</span>€</p>
+                            </div>
+                            <a href="panier.html" class="view-cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                Voir le panier
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="fav.html">
+                            <i class="fas fa-heart"></i>
+                            <span class="favorites-count">0</span>
+                        </a>
+                    </li>                
+                </ul>
+            </nav>
+        </header>
+    </header>
+
+    <div class="wishlist-container">
+        <div class="wishlist-header">
+            <h1><i class="fas fa-heart pulse"></i> Mes Favoris</h1>
+            <div class="wishlist-summary">
+                <p>Total des articles : <span id="wishlist-count">0</span></p>
+                <p>Valeur totale : <span id="wishlist-total">0.00€</span></p>
+            </div>
+        </div>
+
+        <div class="wishlist-content">
+            <div class="wishlist-filters">
+                <div class="filter-group">
+                    <label for="sortBy">Trier par :</label>
+                    <select id="sortBy">
+                        <option value="date-desc">Plus récents</option>
+                        <option value="date-asc">Plus anciens</option>
+                        <option value="price-asc">Prix croissant</option>
+                        <option value="price-desc">Prix décroissant</option>
+                        <option value="name">Nom</option>
+                    </select>
+                </div>
+                <div class="search-group">
+                    <input type="text" id="searchWishlist" placeholder="Rechercher dans mes favoris...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
+            <div class="wishlist-items-grid">
+                <!-- Les articles seront ajoutés ici dynamiquement -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-waves">
+                <div class="wave" id="wave1"></div>
+                <div class="wave" id="wave2"></div>
+                <div class="wave" id="wave3"></div>
+                <div class="wave" id="wave4"></div>
+            </div>
+    
+            <div class="footer-content">
+                <!-- Section À propos -->
+                <div class="footer-section">
+                    <h3 class="footer-title">À propos de MonShop</h3>
+                    <p class="footer-description">
+                        Découvrez notre sélection unique de produits de qualité. 
+                        Nous nous engageons à vous offrir la meilleure expérience shopping.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+        
+                <!-- Section Liens Rapides -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Liens Rapides</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Accueil</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Produits</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> À propos</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+                    </ul>
+                </div>
+        
+                <!-- Section Contact -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Contactez-nous</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>123 Rue du Commerce, 75001 Paris</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <p>+33 1 23 45 67 89</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>contact@monshop.com</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Section Newsletter -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Newsletter</h3>
+                    <p class="footer-description">
+                        Inscrivez-vous pour recevoir nos dernières offres
+                    </p>
+                    <form class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" placeholder="Votre email" required>
+                            <button type="submit">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">
+                        &copy; 2024 MonShop. Tous droits réservés
+                    </p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Politique de confidentialité</a>
+                        <a href="#">Conditions d'utilisation</a>
+                        <a href="#">Mentions légales</a>
+                    </div>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                        <i class="fab fa-cc-apple-pay"></i>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/wishlist-manager.js"></script>
+    </body>
+</html>

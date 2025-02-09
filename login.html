@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="assets/css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-store"></i>
+                <span>MonShop</span>
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="#accueil">
+                        <i class="fas fa-home"></i>
+                        <span>Accueil</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#produits">
+                        <i class="fas fa-tags"></i>
+                        <span>Produits</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="login.html">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Se connecter</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="register.html">
+                        <i class="fas fa-user-plus"></i>
+                        <span>S'inscrire</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="login-container">
+        <div class="form-header">
+            <h2>Connexion</h2>
+            <form action="php/process_login.php" method="POST">
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required placeholder="Adresse e-mail">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" name="password" required placeholder="Mots de passe">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="links">
+                    <p>Mots de passe oubliés ? <a href="forgot-password.html">ici</a></p>
+                </div>
+                <br>
+                <button type="submit">
+                    <i class="fas fa-sign-in-alt"></i> Se connecter
+                </button>
+            </form>
+            <div class="links">
+                <p>Pas encore de compte ? <a href="register.html">S'inscrire</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/auth-login.js"></script>
+</body>
+</html>
